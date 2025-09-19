@@ -2,63 +2,79 @@ export default function WorkExperience() {
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <h2 className="section-title">Work Experience</h2>
+        <div className="section-header">
+          <h2 className="section-title">Volunteer Projects</h2>
+          <p className="section-subtitle">Impactful community service initiatives and projects</p>
+        </div>
         
-        <div className="experience-timeline">
+        <div className="timeline">
           <div className="timeline-item">
             <div className="timeline-marker"></div>
             <div className="timeline-content">
-              <div className="card experience-card">
-                <div className="experience-header">
-                  <h3>Software Engineer Intern</h3>
-                  <div className="company-info">
-                    <span className="company">VAVE Laundry</span>
-                    <span className="period">March 2024 - Present</span>
-                  </div>
+              <div className="card">
+                <div className="card-header">
+                  <h3>Nena Aruna - Project Director</h3>
+                  <div className="date">2023 - 2024</div>
                 </div>
-                <div className="experience-details">
-                  <p>Leading a team of 5 developers in developing a comprehensive laundry management system with Angular frontend and ASP.NET Core backend.</p>
-                  <ul className="achievement-list">
-                    <li>Architected and developed customer, admin, driver, and laundry interfaces</li>
-                    <li>Implemented real-time order tracking and communication features</li>
-                    <li>Led code reviews and established development best practices</li>
-                    <li>Collaborated with stakeholders to define technical requirements</li>
-                  </ul>
-                  <div className="tech-stack">
-                    <span className="tech-tag">Angular</span>
-                    <span className="tech-tag">ASP.NET Core</span>
-                    <span className="tech-tag">Tailwind CSS</span>
-                    <span className="tech-tag">Team Leadership</span>
+                <div className="card-image">
+                  <img 
+                    src="/images/Nena Aruna.jpg" 
+                    alt="Nena Aruna Project" 
+                    className="experience-image"
+                  />
+                </div>
+                <div className="card-body">
+                  <div className="institution-header">
+                    <span className="company">Rotaract Club of University of Moratuwa</span>
+                  </div>
+                  <div className="description">
+                    <p>Directed the Nena Aruna initiative, a comprehensive educational support project that won the Gold Award as the most outstanding project in Basic Education and Literacy at the Rotary District of Sri Lanka and Maldives awarding ceremony.</p>
+                    <ul className="achievement-list">
+                      <li>Led a project aimed at helping O/L examination students across Sri Lanka</li>
+                      <li>Organized online tutoring sessions and physical tutoring seminars</li>
+                      <li>Conducted over 30 educational support sessions</li>
+                      <li>Reached 50+ schools across 10 districts in Sri Lanka</li>
+                      <li>Implemented "Hari Para" - a comprehensive career guidance session series</li>
+                      <li>Won Gold Award for Most Outstanding Project in Basic Education and Literacy</li>
+                    </ul>
+                  </div>
+                  <div className="card-tags">
+                    <span className="tag">Project Management</span>
+                    <span className="tag">Educational Leadership</span>
+                    <span className="tag">Community Outreach</span>
+                    <span className="tag">Award Winner</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
+          
           <div className="timeline-item">
             <div className="timeline-marker"></div>
             <div className="timeline-content">
-              <div className="card experience-card">
-                <div className="experience-header">
-                  <h3>Frontend Developer</h3>
-                  <div className="company-info">
-                    <span className="company">Freelance Projects</span>
-                    <span className="period">2023 - Present</span>
-                  </div>
+              <div className="card">
+                <div className="card-header">
+                  <h3>Community Development Projects</h3>
+                  <div className="date">2022 - Present</div>
                 </div>
-                <div className="experience-details">
-                  <p>Developing responsive web applications and user interfaces for various clients using modern frontend technologies.</p>
-                  <ul className="achievement-list">
-                    <li>Built responsive websites with React and Next.js</li>
-                    <li>Implemented modern UI/UX designs with attention to detail</li>
-                    <li>Optimized web applications for performance and accessibility</li>
-                    <li>Collaborated with clients to deliver solutions meeting business requirements</li>
-                  </ul>
-                  <div className="tech-stack">
-                    <span className="tech-tag">React</span>
-                    <span className="tech-tag">Next.js</span>
-                    <span className="tech-tag">TypeScript</span>
-                    <span className="tech-tag">CSS</span>
+                <div className="card-body">
+                  <div className="institution-header">
+                    <span className="company">Various Volunteer Organizations</span>
+                  </div>
+                  <div className="description">
+                    <p>Participated in and led various community development initiatives focusing on education, technology access, and social impact.</p>
+                    <ul className="achievement-list">
+                      <li>Coordinated multiple community service projects</li>
+                      <li>Provided technical mentorship to students</li>
+                      <li>Organized workshops for digital literacy</li>
+                      <li>Collaborated with local organizations for sustainable impact</li>
+                    </ul>
+                  </div>
+                  <div className="card-tags">
+                    <span className="tag">Community Service</span>
+                    <span className="tag">Mentorship</span>
+                    <span className="tag">Digital Literacy</span>
+                    <span className="tag">Social Impact</span>
                   </div>
                 </div>
               </div>

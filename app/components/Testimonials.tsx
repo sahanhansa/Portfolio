@@ -7,12 +7,15 @@ export default function Testimonials() {
         <div className="testimonials-grid">
           <div className="card testimonial-card">
             <div className="testimonial-content">
-              <p>"Sahan demonstrated exceptional leadership skills while managing our development team. His technical expertise and ability to deliver quality solutions on time made a significant impact on our project success."</p>
+              <p>"Sahan's leadership as Co-Director of Community Service Avenue was exemplary. His dedication to community development and ability to coordinate multiple impactful projects like Grama Prabodhaya and Manusath Handa showcased his exceptional organizational skills and commitment to social change."</p>
             </div>
             <div className="testimonial-author">
+              <div className="author-avatar">
+                <img src="/images/Director rotaract.jpg" alt="Rotaract Leadership" />
+              </div>
               <div className="author-info">
-                <h4>John Smith</h4>
-                <span className="position">Project Manager, VAVE Laundry</span>
+                <h4>Rotaract Club Leadership</h4>
+                <span className="position">University of Moratuwa</span>
               </div>
             </div>
           </div>

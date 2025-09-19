@@ -79,11 +79,11 @@ export default function Navigation() {
           </li>
           <li className="nav-item">
             <a 
-              href="#work-experience" 
-              className={`nav-link ${activeSection === 'work-experience' ? 'active' : ''}`}
-              onClick={(e) => { e.preventDefault(); scrollToSection('work-experience') }}
+              href="#volunteering" 
+              className={`nav-link ${activeSection === 'volunteering' ? 'active' : ''}`}
+              onClick={(e) => { e.preventDefault(); scrollToSection('volunteering') }}
             >
-              Work Experience
+              Volunteering
             </a>
           </li>
           <li className="nav-item">
@@ -92,7 +92,7 @@ export default function Navigation() {
               className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}
               onClick={(e) => { e.preventDefault(); scrollToSection('experience') }}
             >
-              Volunteering
+              Work Experience
             </a>
           </li>
           <li className="nav-item">

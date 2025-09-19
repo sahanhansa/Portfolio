@@ -45,59 +45,128 @@ export default function Skills() {
         </div>
         
         <div className="skills-grid">
-          <div className="skills-category">
-            <h3>Frontend Technologies</h3>
-            <div className="skills-list">
-              {frontendSkills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  <div className="skill-content">
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
+          {/* First Row - Two Columns */}
+          <div className="skills-row">
+            <div className="skills-category">
+              <h3>Frontend Technologies</h3>
+              <div className="skills-list">
+                {frontendSkills.map((skill, index) => (
+                  <div key={index} className="skill-item">
+                    <div className="skill-content">
+                      <span className="skill-icon">{skill.icon}</span>
+                      <span className="skill-name">{skill.name}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            <div className="skills-category">
+              <h3>Backend Technologies</h3>
+              <div className="skills-list">
+                {backendSkills.map((skill, index) => (
+                  <div key={index} className="skill-item">
+                    <div className="skill-content">
+                      <span className="skill-icon">{skill.icon}</span>
+                      <span className="skill-name">{skill.name}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="skills-category">
-            <h3>Backend Technologies</h3>
-            <div className="skills-list">
-              {backendSkills.map((skill, index) => (
-                <div key={index} className="skill-item">
+          {/* Second Row - Two Columns */}
+          <div className="skills-row">
+            <div className="skills-category">
+              <h3>Database Technologies</h3>
+              <div className="skills-list">
+                {databaseSkills.map((skill, index) => (
+                  <div key={index} className="skill-item">
+                    <div className="skill-content">
+                      <span className="skill-icon">{skill.icon}</span>
+                      <span className="skill-name">{skill.name}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="skills-category">
+              <h3>Development Tools</h3>
+              <div className="skills-list">
+                <div className="skill-item">
                   <div className="skill-content">
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
+                    <span className="skill-icon">🔧</span>
+                    <span className="skill-name">Git & GitHub</span>
                   </div>
                 </div>
-              ))}
+                <div className="skill-item">
+                  <div className="skill-content">
+                    <span className="skill-icon">📝</span>
+                    <span className="skill-name">VS Code</span>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-content">
+                    <span className="skill-icon">🐳</span>
+                    <span className="skill-name">Docker</span>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-content">
+                    <span className="skill-icon">📦</span>
+                    <span className="skill-name">npm/yarn</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="skills-category">
-            <h3>Database Technologies</h3>
-            <div className="skills-list">
-              {databaseSkills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  <div className="skill-content">
-                    <span className="skill-icon">{skill.icon}</span>
-                    <span className="skill-name">{skill.name}</span>
+          {/* Third Row - Hardware & Tools in Two Columns */}
+          <div className="skills-row">
+            <div className="skills-category">
+              <h3>Hardware & Tools</h3>
+              <div className="skills-list">
+                {hardwareTools.map((tool, index) => (
+                  <div key={index} className="skill-item">
+                    <div className="skill-content">
+                      <span className="skill-icon">{tool.icon}</span>
+                      <span className="skill-name">{tool.name}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="skills-category">
-            <h3>Hardware & Tools</h3>
-            <div className="skills-list">
-              {hardwareTools.map((tool, index) => (
-                <div key={index} className="skill-item">
+            <div className="skills-category">
+              <h3>Other Tools</h3>
+              <div className="skills-list">
+                <div className="skill-item">
                   <div className="skill-content">
-                    <span className="skill-icon">{tool.icon}</span>
-                    <span className="skill-name">{tool.name}</span>
+                    <span className="skill-icon">🎨</span>
+                    <span className="skill-name">Figma</span>
                   </div>
                 </div>
-              ))}
+                <div className="skill-item">
+                  <div className="skill-content">
+                    <span className="skill-icon">📊</span>
+                    <span className="skill-name">Postman</span>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-content">
+                    <span className="skill-icon">🔍</span>
+                    <span className="skill-name">Chrome DevTools</span>
+                  </div>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-content">
+                    <span className="skill-icon">🖥️</span>
+                    <span className="skill-name">Windows/Linux</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
