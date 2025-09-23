@@ -1,4 +1,67 @@
+'use client'
+import { useState } from 'react'
+
 export default function VolunteerProjects() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const projects = [
+    {
+      id: 1,
+      title: "Nena Aruna - Project Director",
+      organization: "Rotaract Club of University of Moratuwa",
+      period: "2023 - 2024",
+      image: "/images/Nena Aruna.jpg",
+      description: "Award-winning educational support initiative that reached 50+ schools across 10 districts in Sri Lanka. Conducted 30+ tutoring sessions and implemented 'Hari Para' career guidance series, earning the Gold Award for Most Outstanding Project in Basic Education and Literacy at the Rotary District of Sri Lanka and Maldives.",
+      tags: ["Project Management", "Educational Leadership", "Community Outreach", "Award Winner"],
+      subProjects: []
+    },
+    {
+      id: 2,
+      title: "Grama Prabodhaya 2025 - Project Director",
+      organization: "Rotaract Club of University of Moratuwa",
+      period: "2025",
+      image: "/images/Grama Prabodhaya.jpg",
+      description: "Comprehensive rural development initiative addressing maternal health, water access, and education across Kirimatiyawa and Ambanpola villages. Implemented 7 integrated sub-projects including Senehe Yathra, Aqua Safe, and educational programs, impacting 200+ beneficiaries with RO water systems, 2000 donated books, and maternal health support.",
+      tags: ["Rural Development", "Community Health", "Educational Support", "Project Management"],
+      subProjects: ["Senehe Yathra", "Aqua Safe", "Intellect", "Heta", "Star Seekers", "Akuru", "Sihina"]
+    },
+    {
+      id: 3,
+      title: "Woof Roof 2025 - Co-Chairperson",
+      organization: "Rotaract Club of University of Moratuwa",
+      period: "2025",
+      image: "/images/Woof Roof.jpg",
+      description: "Environmental services initiative focused on Sri Lankan street dog welfare through rescue, vaccination, and re-homing programs. Partnered with 'Baw Baw' animal shelter in Kurunegala district, organizing successful fundraising campaigns, providing shelter support, and creating 'Woofy's Gallery' photo competition to raise awareness.",
+      tags: ["Animal Welfare", "Environmental Services", "Fundraising", "Community Outreach"],
+      subProjects: ["Fundraising Campaign", "Sticker Sales", "Shelter Support", "Animal Care", "Woofy's Gallery"]
+    },
+    {
+      id: 4,
+      title: "Hand in Hand - Project Director",
+      organization: "Rotaract Club of University of Moratuwa",
+      period: "2024 - 2025",
+      image: "/images/Hand in Hand.jpg",
+      description: "Comprehensive cancer support initiative providing financial aid and awareness to cancer patients across Sri Lanka. Successfully raised over Rs. 500,000 through fundraising campaigns, conducted awareness sessions, and provided direct support through medical equipment donations, sago donations to 800 patients, and the Colors Project bringing joy to pediatric cancer patients.",
+      tags: ["Healthcare Support", "Cancer Awareness", "Fundraising", "Community Health", "Pediatric Care"],
+      subProjects: ["Fundraising Campaigns", "Colors Project", "Cancer Awareness", "Medical Equipment Donation", "Sago Donation", "Breast Cancer Awareness"]
+    }
+  ]
+
+  const cardsPerSlide = 3
+  const totalSlides = Math.ceil(projects.length / cardsPerSlide)
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
   return (
     <section id="experience" className="experience">
       <div className="container">
@@ -7,109 +70,67 @@ export default function VolunteerProjects() {
           <p className="section-subtitle">Impactful community service initiatives and projects</p>
         </div>
         
-        <div className="card-grid">
-          <div className="card volunteer-card">
-            <div className="volunteer-image">
-              <img src="/images/Nena Aruna.jpg" alt="Nena Aruna Project" />
+        <div className="projects-carousel">
+          <div className="carousel-container">
+            <button className="carousel-btn carousel-btn-prev" onClick={prevSlide}>
+              &#8249;
+            </button>
+            
+            <div className="cards-container">
+              {projects
+                .slice(currentSlide * cardsPerSlide, (currentSlide + 1) * cardsPerSlide)
+                .map((project) => (
+                  <div key={project.id} className="card volunteer-card volunteer-project-card">
+                    <div className="volunteer-image">
+                      <img src={project.image} alt={project.title} />
+                    </div>
+                    <div className="volunteer-header">
+                      <h3>{project.title}</h3>
+                      <div className="organization-info">
+                        <span className="organization">{project.organization}</span>
+                        <span className="period">{project.period}</span>
+                      </div>
+                    </div>
+                    <div className="volunteer-details">
+                      <div className="topic-section">
+                        <h4 className="topic-title">Project Overview</h4>
+                        <p className="topic-content">{project.description}</p>
+                      </div>
+                      
+                      {project.subProjects.length > 0 && (
+                        <div className="topic-section">
+                          <h4 className="topic-title">Key Components</h4>
+                          <ul className="impact-list">
+                            {project.subProjects.map((subProject, index) => (
+                              <li key={index}>{subProject}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      <div className="skills-gained">
+                        {project.tags.map((tag, index) => (
+                          <span key={index} className="skill-tag">{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
-            <div className="volunteer-header">
-              <h3>Nena Aruna - Project Director</h3>
-              <div className="organization-info">
-                <span className="organization">Rotaract Club of University of Moratuwa</span>
-                <span className="period">2023 - 2024</span>
-              </div>
-            </div>
-            <div className="volunteer-details">
-              <p>Directed the Nena Aruna initiative, a comprehensive educational support project that won the Gold Award as the most outstanding project in Basic Education and Literacy at the Rotary District of Sri Lanka and Maldives awarding ceremony.</p>
-              <ul className="impact-list">
-                <li>Led a project aimed at helping O/L examination students across Sri Lanka</li>
-                <li>Organized online tutoring sessions and physical tutoring seminars</li>
-                <li>Conducted over 30 educational support sessions</li>
-                <li>Reached 50+ schools across 10 districts in Sri Lanka</li>
-                <li>Implemented "Hari Para" - a comprehensive career guidance session series</li>
-                <li>Won Gold Award for Most Outstanding Project in Basic Education and Literacy</li>
-              </ul>
-              <div className="impact-tags">
-                <span className="tag">Project Management</span>
-                <span className="tag">Educational Leadership</span>
-                <span className="tag">Community Outreach</span>
-                <span className="tag">Award Winner</span>
-              </div>
-            </div>
+            
+            <button className="carousel-btn carousel-btn-next" onClick={nextSlide}>
+              &#8250;
+            </button>
           </div>
-
-          <div className="card volunteer-card">
-            <div className="volunteer-image">
-              <img src="/images/Grama Prabodhaya.jpg" alt="Grama Prabodhaya 2025 Project" />
-            </div>
-            <div className="volunteer-header">
-              <h3>Grama Prabodhaya 2025 - Project Director</h3>
-              <div className="organization-info">
-                <span className="organization">Rotaract Club of University of Moratuwa</span>
-                <span className="period">2025</span>
-              </div>
-            </div>
-            <div className="volunteer-details">
-              <p>Led a comprehensive rural development initiative aimed at uplifting the lives of villagers in Kirimatiyawa and Ambanpola villages, Kurunegala district. The project focused on addressing critical issues including maternal health, water access, education, and community development.</p>
-              
-              <div className="sub-projects">
-                <h4>Key Sub-Projects:</h4>
-                <div className="sub-project-grid">
-                  <span className="sub-project-tag">Senehe Yathra</span>
-                  <span className="sub-project-tag">Aqua Safe</span>
-                  <span className="sub-project-tag">Intellect</span>
-                  <span className="sub-project-tag">Heta</span>
-                  <span className="sub-project-tag">Star Seekers</span>
-                  <span className="sub-project-tag">Akuru</span>
-                  <span className="sub-project-tag">Sihina</span>
-                </div>
-              </div>
-
-              <ul className="impact-list">
-                <li>Addressed critical health issues: low birth weight babies and water contamination</li>
-                <li>Partnered with Conscient AI as Bronze Sponsor</li>
-                <li>Implemented 7 integrated sub-projects across health, education, and infrastructure</li>
-                <li>Impacted 200+ direct beneficiaries including students, mothers, and community members</li>
-                <li>Installed RO water systems and donated 2000 books to schools</li>
-              </ul>
-              <div className="impact-tags">
-                <span className="tag">Rural Development</span>
-                <span className="tag">Community Health</span>
-                <span className="tag">Educational Support</span>
-                <span className="tag">Project Management</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="card volunteer-card">
-            <div className="volunteer-image">
-              <div className="placeholder-image">
-                <span>Community Impact Projects</span>
-              </div>
-            </div>
-            <div className="volunteer-header">
-              <h3>Additional Community Projects</h3>
-              <div className="organization-info">
-                <span className="organization">Various Organizations</span>
-                <span className="period">2022 - Present</span>
-              </div>
-            </div>
-            <div className="volunteer-details">
-              <p>Participated in and led various community development initiatives focusing on education, technology access, and social impact across different organizations and communities.</p>
-              <ul className="impact-list">
-                <li>Coordinated multiple community service projects</li>
-                <li>Provided technical mentorship to students</li>
-                <li>Organized workshops for digital literacy</li>
-                <li>Collaborated with local organizations for sustainable impact</li>
-                <li>Supported educational initiatives in rural communities</li>
-              </ul>
-              <div className="impact-tags">
-                <span className="tag">Community Service</span>
-                <span className="tag">Mentorship</span>
-                <span className="tag">Digital Literacy</span>
-                <span className="tag">Social Impact</span>
-              </div>
-            </div>
+          
+          <div className="carousel-dots">
+            {Array.from({ length: totalSlides }, (_, index) => (
+              <button
+                key={index}
+                className={`dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+              />
+            ))}
           </div>
         </div>
       </div>
