@@ -1,6 +1,51 @@
+'use client'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 
 export default function Hero() {
+  const titles = [
+    "Full Stack Developer",
+    "Tech Enthusiast", 
+    "Aspiring Project Manager",
+    "Backend Developer"
+  ]
+  
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
+  const [displayedText, setDisplayedText] = useState("")
+  const [isTyping, setIsTyping] = useState(true)
+
+  useEffect(() => {
+    const currentTitle = titles[currentTitleIndex]
+    
+    if (isTyping) {
+      // Typing effect
+      if (displayedText.length < currentTitle.length) {
+        const timeout = setTimeout(() => {
+          setDisplayedText(currentTitle.slice(0, displayedText.length + 1))
+        }, 100) // Typing speed
+        return () => clearTimeout(timeout)
+      } else {
+        // Pause before erasing
+        const timeout = setTimeout(() => {
+          setIsTyping(false)
+        }, 2000) // Display duration
+        return () => clearTimeout(timeout)
+      }
+    } else {
+      // Erasing effect
+      if (displayedText.length > 0) {
+        const timeout = setTimeout(() => {
+          setDisplayedText(displayedText.slice(0, -1))
+        }, 50) // Erasing speed
+        return () => clearTimeout(timeout)
+      } else {
+        // Move to next title
+        setCurrentTitleIndex((prev) => (prev + 1) % titles.length)
+        setIsTyping(true)
+      }
+    }
+  }, [displayedText, currentTitleIndex, isTyping, titles])
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-12 bg-gradient-to-br from-dark via-dark-secondary to-dark relative overflow-hidden">
       {/* Background particles */}
@@ -8,13 +53,14 @@ export default function Hero() {
       
       <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-medium leading-tight">
                 Hi, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Sahan Siriwardhana</span>
               </h1>
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-text-secondary">
-                Full Stack Developer & IT Undergraduate
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold min-h-[4.5rem] flex items-center">
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap leading-tight">{displayedText}</span>
+                <span className="inline-block w-1 h-[0.9em] bg-primary ml-2 animate-pulse"></span>
               </h2>
               <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">
                 Passionate about Full Stack Development, Business Analysis, Networking, and Project Management.
@@ -24,7 +70,14 @@ export default function Hero() {
             
             <div className="flex flex-wrap gap-4">
               <a href="#projects" className="btn btn-primary">View My Work</a>
-              <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+              <a 
+                href="/images/Sahan Siriwardhana.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                View My CV
+              </a>
             </div>
             
             <div className="flex space-x-6">

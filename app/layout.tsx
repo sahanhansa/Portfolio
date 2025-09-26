@@ -28,8 +28,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
       </head>
-      <body className={`${inter.className} bg-gray-900 text-white min-h-screen`}>
-        {/* <div className="bg-particles"></div> */}
+      <body className={`${inter.className} text-white min-h-screen`}>
         {children}
       </body>
     </html>

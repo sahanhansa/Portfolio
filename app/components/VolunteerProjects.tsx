@@ -21,7 +21,7 @@ export default function VolunteerProjects() {
       organization: "Rotaract Club of University of Moratuwa",
       period: "2025",
       image: "/images/Grama%20Prabodhaya.jpg",
-      description: "Comprehensive rural development initiative addressing maternal health, water access, and education across Kirimatiyawa and Ambanpola villages. Implemented 7 integrated sub-projects including Senehe Yathra, Aqua Safe, and educational programs, impacting 200+ beneficiaries with RO water systems, 2000 donated books, and maternal health support.",
+      description: "Comprehensive rural development initiative addressing maternal health, water access, and education across Kirimatiyawa and Ambanpola villages. Impacting 200+ beneficiaries through integrated community programs.",
       tags: ["Rural Development", "Community Health", "Educational Support", "Project Management"],
       subProjects: ["Senehe Yathra", "Aqua Safe", "Intellect", "Heta", "Star Seekers", "Akuru", "Sihina"]
     },
@@ -125,11 +125,21 @@ export default function VolunteerProjects() {
                       {project.subProjects.length > 0 && (
                         <div>
                           <h4 className="text-sm font-semibold text-blue-400 mb-2">Key Components</h4>
-                          <ul className="space-y-1">
-                            {project.subProjects.map((subProject, index) => (
-                              <li key={index} className="text-sm text-gray-300">• {subProject}</li>
-                            ))}
-                          </ul>
+                          {project.id === 2 ? (
+                            // Two-column layout for Grama Prabodhaya (middle card)
+                            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                              {project.subProjects.map((subProject, index) => (
+                                <div key={index} className="text-sm text-gray-300">• {subProject}</div>
+                              ))}
+                            </div>
+                          ) : (
+                            // Single column for other cards
+                            <ul className="space-y-1">
+                              {project.subProjects.map((subProject, index) => (
+                                <li key={index} className="text-sm text-gray-300">• {subProject}</li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       )}
 

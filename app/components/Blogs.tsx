@@ -9,6 +9,13 @@ export default function Blogs() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div className="relative h-48 overflow-hidden bg-gray-700">
+              <img 
+                src="/images/Epic visit.jpg" 
+                alt="First Industry Visit to Epic Lanka"
+                className="w-full h-full object-contain"
+              />
+            </div>
             <div className="p-6">
               <div className="mb-4">
                 <h3 className="text-xl font-semibold text-white mb-2">First Industry Visit to Epic Lanka</h3>
@@ -32,57 +39,64 @@ export default function Blogs() {
           </div>
 
           <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div className="relative h-48 overflow-hidden">
+              <img 
+                src="/images/FIT Future careers.jpg" 
+                alt="FIT Future Careers 2024 Career Fair"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="p-6">
               <div className="mb-4">
-                <h3 className="text-xl font-semibold text-white mb-2">My Journey into Full-Stack Development</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">FIT Future Careers 2024 Career Fair</h3>
                 <div className="flex justify-between text-sm text-gray-400">
-                  <span>November 2024</span>
-                  <span>7 min read</span>
+                  <span>April 2024</span>
+                  <span>4 min read</span>
                 </div>
               </div>
               <div className="mb-4">
-                <p className="text-gray-300 mb-4">Reflecting on my transition from IT undergraduate to full-stack developer, the challenges faced, and lessons learned along the way through university projects and volunteer work.</p>
+                <p className="text-gray-300 mb-4">Thankful for the opportunity to be a volunteer as an event coordinator at FIT Future Careers 2024 Career Fair, organized by Faculty of IT, University of Moratuwa. A great experience connecting students with top tech companies.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Career</span>
-                  <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Learning</span>
-                  <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Full-Stack</span>
+                  <span className="px-3 py-1 bg-orange-600 text-white text-sm rounded-full">Career Fair</span>
+                  <span className="px-3 py-1 bg-orange-600 text-white text-sm rounded-full">Event Coordinator</span>
+                  <span className="px-3 py-1 bg-orange-600 text-white text-sm rounded-full">Volunteer</span>
                 </div>
               </div>
               <div>
-                <a href="#" className="text-blue-400 hover:text-blue-300 font-medium">Coming Soon →</a>
+                <a href="https://www.linkedin.com/posts/sahan-siriwardhana-977700288_fitfuturecareers-activity-7163371990748180480-d2nS" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 font-medium">Read More →</a>
               </div>
             </div>
           </div>
 
           <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div className="relative h-48 overflow-hidden">
+              <img 
+                src="/images/Freshly.jpg" 
+                alt="Freshly - Laundry Management Platform"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="p-6">
               <div className="mb-4">
-                <h3 className="text-xl font-semibold text-white mb-2">Leadership Through Volunteer Service</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Freshly - Software Development Project</h3>
                 <div className="flex justify-between text-sm text-gray-400">
-                  <span>December 2024</span>
-                  <span>6 min read</span>
+                  <span>January 2025</span>
+                  <span>5 min read</span>
                 </div>
               </div>
               <div className="mb-4">
-                <p className="text-gray-300 mb-4">How my experience as Co-Director of Community Service at Rotaract Club shaped my leadership skills and project management abilities in real-world scenarios.</p>
+                <p className="text-gray-300 mb-4">Successfully completed our Second-Year Software Development Project - Freshly, a full-stack laundry management platform at University of Moratuwa. As Team Leader, I managed project planning, architecture design, and contributed to both frontend and backend development.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Leadership</span>
-                  <span className="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Volunteer</span>
-                  <span className="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Project Management</span>
+                  <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Full-Stack</span>
+                  <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Team Leader</span>
+                  <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Angular</span>
+                  <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">ASP.NET Core</span>
                 </div>
               </div>
               <div>
-                <a href="#" className="text-blue-400 hover:text-blue-300 font-medium">Coming Soon →</a>
+                <a href="https://www.linkedin.com/posts/sahan-siriwardhana-977700288_softwaredevelopment-leadership-fullstackdevelopment-activity-7368259692155838465-qLT9" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 font-medium">Read More →</a>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-12 bg-gray-800 rounded-lg p-8">
-          <p className="text-lg text-gray-300 mb-4">Want to stay updated with my career journey?</p>
-          <div className="flex justify-center gap-4">
-            <a href="#contact" className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">Connect With Me</a>
-            <a href="https://www.linkedin.com/in/sahan-siriwardhana-977700288/" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">Follow on LinkedIn</a>
           </div>
         </div>
       </div>

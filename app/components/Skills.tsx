@@ -19,7 +19,6 @@ export default function Skills() {
 
   const databaseSkills = [
     { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", color: "#4479A1" },
-    { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg", color: "#FFCA28" },
     { name: "DBeaver", icon: "https://dbeaver.io/wp-content/uploads/2015/09/beaver-head.png", color: "#382923" }
   ]
 
