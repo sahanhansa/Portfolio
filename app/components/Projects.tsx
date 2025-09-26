@@ -83,7 +83,7 @@ export default function Projects() {
                 <span className="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Responsive Design</span>
               </div>
               <div className="flex flex-wrap gap-2">
-                <a href="/" className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors">Live Demo</a>
+                <a href="https://portfolio-olive-three-21.vercel.app/" className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a href="https://github.com/sahanhansa/Portfolio" className="px-4 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
