@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals/globals.css'
+import './globals/tailwind.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,8 +28,8 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
       </head>
-      <body className={`${inter.className} bg-gradient-dark`}>
-        <div className="bg-particles"></div>
+      <body className={`${inter.className} bg-gray-900 text-white min-h-screen`}>
+        {/* <div className="bg-particles"></div> */}
         {children}
       </body>
     </html>

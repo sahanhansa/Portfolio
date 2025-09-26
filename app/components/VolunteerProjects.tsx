@@ -10,7 +10,7 @@ export default function VolunteerProjects() {
       title: "Nena Aruna - Project Director",
       organization: "Rotaract Club of University of Moratuwa",
       period: "2023 - 2024",
-      image: "/images/Nena Aruna.jpg",
+      image: "/images/Nena%20Aruna.jpg",
       description: "Award-winning educational support initiative that reached 50+ schools across 10 districts in Sri Lanka. Conducted 30+ tutoring sessions and implemented 'Hari Para' career guidance series, earning the Gold Award for Most Outstanding Project in Basic Education and Literacy at the Rotary District of Sri Lanka and Maldives.",
       tags: ["Project Management", "Educational Leadership", "Community Outreach", "Award Winner"],
       subProjects: []
@@ -20,7 +20,7 @@ export default function VolunteerProjects() {
       title: "Grama Prabodhaya 2025 - Project Director",
       organization: "Rotaract Club of University of Moratuwa",
       period: "2025",
-      image: "/images/Grama Prabodhaya.jpg",
+      image: "/images/Grama%20Prabodhaya.jpg",
       description: "Comprehensive rural development initiative addressing maternal health, water access, and education across Kirimatiyawa and Ambanpola villages. Implemented 7 integrated sub-projects including Senehe Yathra, Aqua Safe, and educational programs, impacting 200+ beneficiaries with RO water systems, 2000 donated books, and maternal health support.",
       tags: ["Rural Development", "Community Health", "Educational Support", "Project Management"],
       subProjects: ["Senehe Yathra", "Aqua Safe", "Intellect", "Heta", "Star Seekers", "Akuru", "Sihina"]
@@ -30,7 +30,7 @@ export default function VolunteerProjects() {
       title: "Woof Roof 2025 - Co-Chairperson",
       organization: "Rotaract Club of University of Moratuwa",
       period: "2025",
-      image: "/images/Woof Roof.jpg",
+      image: "/images/Woof%20Roof.jpg",
       description: "Environmental services initiative focused on Sri Lankan street dog welfare through rescue, vaccination, and re-homing programs. Partnered with 'Baw Baw' animal shelter in Kurunegala district, organizing successful fundraising campaigns, providing shelter support, and creating 'Woofy's Gallery' photo competition to raise awareness.",
       tags: ["Animal Welfare", "Environmental Services", "Fundraising", "Community Outreach"],
       subProjects: ["Fundraising Campaign", "Sticker Sales", "Shelter Support", "Animal Care", "Woofy's Gallery"]
@@ -40,7 +40,7 @@ export default function VolunteerProjects() {
       title: "Hand in Hand - Project Director",
       organization: "Rotaract Club of University of Moratuwa",
       period: "2024 - 2025",
-      image: "/images/Hand in Hand.jpg",
+      image: "/images/Hand%20in%20Hand.jpg",
       description: "Comprehensive cancer support initiative providing financial aid and awareness to cancer patients across Sri Lanka. Successfully raised over Rs. 500,000 through fundraising campaigns, conducted awareness sessions, and provided direct support through medical equipment donations, sago donations to 800 patients, and the Colors Project bringing joy to pediatric cancer patients.",
       tags: ["Healthcare Support", "Cancer Awareness", "Fundraising", "Community Health", "Pediatric Care"],
       subProjects: ["Fundraising Campaigns", "Colors Project", "Cancer Awareness", "Medical Equipment Donation", "Sago Donation", "Breast Cancer Awareness"]
@@ -62,72 +62,105 @@ export default function VolunteerProjects() {
     setCurrentSlide(index)
   }
 
+  // Get current slide's projects
+  const currentProjects = projects.slice(
+    currentSlide * cardsPerSlide, 
+    (currentSlide + 1) * cardsPerSlide
+  )
+
+  // Determine grid class based on number of cards
+  const getGridClass = (cardCount: number) => {
+    switch (cardCount) {
+      case 1:
+        return "grid grid-cols-1 justify-items-center max-w-md mx-auto"
+      case 2:
+        return "grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+      default:
+        return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+    }
+  }
+
   return (
-    <section id="experience" className="experience">
-      <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Volunteer Projects</h2>
-          <p className="section-subtitle">Impactful community service initiatives and projects</p>
+    <section id="experience" className="py-16 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4">Volunteer Projects</h2>
+          <p className="text-lg text-gray-300">Impactful community service initiatives and projects</p>
         </div>
         
-        <div className="projects-carousel">
-          <div className="carousel-container">
-            <button className="carousel-btn carousel-btn-prev" onClick={prevSlide}>
+        <div className="relative max-w-6xl mx-auto">
+          <div className="flex items-center gap-6 mb-8">
+            <button 
+              className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl hover:bg-blue-700 transition-all duration-300 flex-shrink-0"
+              onClick={prevSlide}
+            >
               &#8249;
             </button>
             
-            <div className="cards-container">
-              {projects
-                .slice(currentSlide * cardsPerSlide, (currentSlide + 1) * cardsPerSlide)
-                .map((project) => (
-                  <div key={project.id} className="card volunteer-card volunteer-project-card">
-                    <div className="volunteer-image">
-                      <img src={project.image} alt={project.title} />
-                    </div>
-                    <div className="volunteer-header">
-                      <h3>{project.title}</h3>
-                      <div className="organization-info">
-                        <span className="organization">{project.organization}</span>
-                        <span className="period">{project.period}</span>
+            <div className={`flex-1 ${getGridClass(currentProjects.length)}`}>
+              {currentProjects.map((project) => (
+                <div key={project.id} className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-750 transition-colors w-full">
+                  <div className="h-40 overflow-hidden rounded-lg mb-4">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    />
+                  </div>
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-xl font-semibold text-blue-400 mb-2">{project.title}</h3>
+                      <div className="space-y-1">
+                        <span className="block text-sm text-gray-300 font-medium">{project.organization}</span>
+                        <span className="block text-xs text-blue-300 font-medium">{project.period}</span>
                       </div>
                     </div>
-                    <div className="volunteer-details">
-                      <div className="topic-section">
-                        <h4 className="topic-title">Project Overview</h4>
-                        <p className="topic-content">{project.description}</p>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-sm font-semibold text-blue-400 mb-2">Project Overview</h4>
+                        <p className="text-sm text-gray-300 leading-relaxed">{project.description}</p>
                       </div>
                       
                       {project.subProjects.length > 0 && (
-                        <div className="topic-section">
-                          <h4 className="topic-title">Key Components</h4>
-                          <ul className="impact-list">
+                        <div>
+                          <h4 className="text-sm font-semibold text-blue-400 mb-2">Key Components</h4>
+                          <ul className="space-y-1">
                             {project.subProjects.map((subProject, index) => (
-                              <li key={index}>{subProject}</li>
+                              <li key={index} className="text-sm text-gray-300">• {subProject}</li>
                             ))}
                           </ul>
                         </div>
                       )}
 
-                      <div className="skills-gained">
+                      <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, index) => (
-                          <span key={index} className="skill-tag">{tag}</span>
+                          <span key={index} className="px-3 py-1 bg-blue-600 bg-opacity-20 text-blue-300 text-xs rounded-full font-medium">
+                            {tag}
+                          </span>
                         ))}
                       </div>
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
             </div>
             
-            <button className="carousel-btn carousel-btn-next" onClick={nextSlide}>
+            <button 
+              className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl hover:bg-blue-700 transition-all duration-300 flex-shrink-0"
+              onClick={nextSlide}
+            >
               &#8250;
             </button>
           </div>
           
-          <div className="carousel-dots">
+          <div className="flex justify-center space-x-2">
             {Array.from({ length: totalSlides }, (_, index) => (
               <button
                 key={index}
-                className={`dot ${index === currentSlide ? 'active' : ''}`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide ? 'bg-blue-600' : 'bg-gray-600 hover:bg-gray-500'
+                }`}
                 onClick={() => goToSlide(index)}
               />
             ))}

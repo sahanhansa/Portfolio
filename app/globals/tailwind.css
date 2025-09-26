@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --primary-color: #00bcd4;
+  --secondary-color: #ff6b35;
+  --accent-color: #4caf50;
+  --bg-dark: #1a1a1a;
+  --bg-dark-secondary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Component Classes */
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-block text-center;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-opacity-80 hover:transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white;
+  }
+  
+  .card {
+    @apply bg-dark-secondary rounded-xl p-6 shadow-lg transition-all duration-300 hover:transform hover:scale-105;
+  }
+  
+  .section-title {
+    @apply text-4xl font-bold text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-text-secondary text-center mb-12;
+  }
+  
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-secondary) 100%);
+  }
+}
+
+/* Background Effects */
+.bg-particles::before,
+.bg-particles::after {
+  content: '';
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.bg-particles::before {
+  background: var(--primary-color);
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bg-particles::after {
+  background: var(--accent-color);
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}

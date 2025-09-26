@@ -1,91 +1,90 @@
+'use client'
 import Image from 'next/image'
 
 export default function Projects() {
   return (
-    <section id="projects" className="projects">
-      <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">My Projects</h2>
-          <p className="section-subtitle">A showcase of my development work</p>
+    <section id="projects" className="py-16 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4">My Projects</h2>
+          <p className="text-lg text-gray-300">A showcase of my development work</p>
         </div>
-      </div>
-      <div className="projects-container">
-        <div className="projects-grid">
-          <div className="card project-card">
-            <div className="project-image">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <div className="aspect-video overflow-hidden">
               <Image 
-                src="/images/Freshly Frontend - Google Chrome 8_4_2025 3_12_26 AM.png" 
+                src="/images/Freshly%20Frontend%20-%20Google%20Chrome%208_4_2025%203_12_26%20AM.png" 
                 alt="Freshly Laundry Management System" 
-                className="project-screenshot"
+                className="w-full h-full object-cover"
                 width={400}
                 height={280}
               />
             </div>
-            <div className="project-content">
-              <h3>Freshly - Laundry Management System</h3>
-              <p>A comprehensive laundry management system with four interfaces (Customer, Admin, Driver, Laundry). Connects customers with registered laundries and provides online service booking with driver coordination.</p>
-              <div className="project-tags">
-                <span className="tag">Angular</span>
-                <span className="tag">Tailwind CSS</span>
-                <span className="tag">ASP.NET Core</span>
-                <span className="tag">Team Leadership</span>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-white mb-3">Freshly - Laundry Management System</h3>
+              <p className="text-gray-400 mb-4">A comprehensive laundry management system with four interfaces (Customer, Admin, Driver, Laundry). Connects customers with registered laundries and provides online service booking with driver coordination.</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">Angular</span>
+                <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">Tailwind CSS</span>
+                <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">ASP.NET Core</span>
+                <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">Team Leadership</span>
               </div>
-              <div className="project-links">
-                <a href="https://www.vave.lk/index.html" className="btn btn-sm" target="_blank" rel="noopener noreferrer">Partner Company</a>
-                <a href="https://github.com/sahanhansa/FreshlyFrontend" className="btn btn-sm btn-secondary" target="_blank" rel="noopener noreferrer">Frontend Repo</a>
-                <a href="https://github.com/sahanhansa/FreshlyBackend" className="btn btn-sm btn-secondary" target="_blank" rel="noopener noreferrer">Backend Repo</a>
+              <div className="flex flex-wrap gap-2">
+                <a href="https://www.vave.lk/index.html" className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors" target="_blank" rel="noopener noreferrer">Partner Company</a>
+                <a href="https://github.com/sahanhansa/FreshlyFrontend" className="px-4 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">Frontend Repo</a>
+                <a href="https://github.com/sahanhansa/FreshlyBackend" className="px-4 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">Backend Repo</a>
               </div>
             </div>
           </div>
 
-          <div className="card project-card">
-            <div className="project-image">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <div className="aspect-video overflow-hidden">
               <Image 
                 src="/images/strikemate.png" 
                 alt="StrikeMate Automated Carrom Opponent" 
-                className="project-screenshot"
+                className="w-full h-full object-cover"
                 width={400}
                 height={280}
               />
             </div>
-            <div className="project-content">
-              <h3>StrikeMate - Automated Carrom Opponent</h3>
-              <p>An automated carrom opponent with precision shooting mechanism. Designed and developed the shooting system with angle control, integrated solenoid with Arduino Uno through relay modules.</p>
-              <div className="project-tags">
-                <span className="tag">Arduino Uno</span>
-                <span className="tag">MG995 Servo</span>
-                <span className="tag">Solenoid</span>
-                <span className="tag">Hardware Design</span>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-white mb-3">StrikeMate - Automated Carrom Opponent</h3>
+              <p className="text-gray-400 mb-4">An automated carrom opponent with precision shooting mechanism. Designed and developed the shooting system with angle control, integrated solenoid with Arduino Uno through relay modules.</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Arduino Uno</span>
+                <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">MG995 Servo</span>
+                <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Solenoid</span>
+                <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-full">Hardware Design</span>
               </div>
-              <div className="project-links">
-                <a href="#" className="btn btn-sm">Documentation</a>
-                <a href="#" className="btn btn-sm btn-secondary">GitHub</a>
+              <div className="flex flex-wrap gap-2">
+                <a href="#" className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors">Documentation</a>
+                <a href="#" className="px-4 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors">GitHub</a>
               </div>
             </div>
           </div>
 
-          <div className="card project-card">
-            <div className="project-image">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <div className="aspect-video overflow-hidden">
               <Image 
-                src="/images/Sahan Siriwardhana - Portfolio .png" 
+                src="/images/Sahan%20Siriwardhana%20-%20Portfolio%20.png" 
                 alt="Personal Portfolio Website" 
-                className="project-screenshot"
+                className="w-full h-full object-cover"
                 width={400}
                 height={280}
               />
             </div>
-            <div className="project-content">
-              <h3>Personal Portfolio Website</h3>
-              <p>A modern, responsive portfolio website showcasing my professional journey, projects, and skills. Built with clean design principles and optimized user experience.</p>
-              <div className="project-tags">
-                <span className="tag">Next.js</span>
-                <span className="tag">React</span>
-                <span className="tag">TypeScript</span>
-                <span className="tag">Responsive Design</span>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-white mb-3">Personal Portfolio Website</h3>
+              <p className="text-gray-400 mb-4">A modern, responsive portfolio website showcasing my professional journey, projects, and skills. Built with clean design principles and optimized user experience.</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Next.js</span>
+                <span className="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">React</span>
+                <span className="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">TypeScript</span>
+                <span className="px-3 py-1 bg-purple-600 text-white text-sm rounded-full">Responsive Design</span>
               </div>
-              <div className="project-links">
-                <a href="/" className="btn btn-sm">Live Demo</a>
-                <a href="https://github.com/sahanhansa/Portfolio" className="btn btn-sm btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <div className="flex flex-wrap gap-2">
+                <a href="/" className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors">Live Demo</a>
+                <a href="https://github.com/sahanhansa/Portfolio" className="px-4 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-700 transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
           </div>
