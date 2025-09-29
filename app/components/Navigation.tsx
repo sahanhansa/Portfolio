@@ -62,9 +62,7 @@ export default function Navigation() {
               <li>
                 <a 
                   href="#education" 
-                  className={`text-xs xl:text-sm font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${
-                    activeSection === 'education' ? 'text-primary' : 'text-text-secondary'
-                  }`}
+                  className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'education' ? 'text-primary' : 'text-text-secondary'}`}
                   onClick={(e) => { e.preventDefault(); scrollToSection('education') }}
                 >
                   Education
@@ -76,9 +74,7 @@ export default function Navigation() {
               <li>
                 <a 
                   href="#projects" 
-                  className={`text-xs xl:text-sm font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${
-                    activeSection === 'projects' ? 'text-primary' : 'text-text-secondary'
-                  }`}
+                  className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'projects' ? 'text-primary' : 'text-text-secondary'}`}
                   onClick={(e) => { e.preventDefault(); scrollToSection('projects') }}
                 >
                   Projects
@@ -90,23 +86,21 @@ export default function Navigation() {
               <li>
                 <a 
                   href="#skills" 
-                  className={`text-xs xl:text-sm font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${
-                    activeSection === 'skills' ? 'text-primary' : 'text-text-secondary'
-                  }`}
+                  className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'skills' ? 'text-primary' : 'text-text-secondary'}`}
                   onClick={(e) => { e.preventDefault(); scrollToSection('skills') }}
                 >
-                  <li>
-                    <a 
-                      href="#education" 
-                      className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'education' ? 'text-primary' : 'text-text-secondary'}`}
-                      onClick={(e) => { e.preventDefault(); scrollToSection('education') }}
-                    >
-                      Education
-                      {activeSection === 'education' && (
-                        <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary"></span>
-                      )}
-                    </a>
-                  </li>
+                  Skills
+                  {activeSection === 'skills' && (
+                    <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary"></span>
+                  )}
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#volunteering" 
+                  className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'volunteering' ? 'text-primary' : 'text-text-secondary'}`}
+                  onClick={(e) => { e.preventDefault(); scrollToSection('volunteering') }}
+                >
                   Volunteering
                   {activeSection === 'volunteering' && (
                     <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary"></span>
@@ -116,9 +110,7 @@ export default function Navigation() {
               <li>
                 <a 
                   href="#experience" 
-                  className={`text-xs xl:text-sm font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${
-                    activeSection === 'experience' ? 'text-primary' : 'text-text-secondary'
-                  }`}
+                  className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'experience' ? 'text-primary' : 'text-text-secondary'}`}
                   onClick={(e) => { e.preventDefault(); scrollToSection('experience') }}
                 >
                   Work Experience
@@ -130,9 +122,7 @@ export default function Navigation() {
               <li>
                 <a 
                   href="#certifications" 
-                  className={`text-xs xl:text-sm font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${
-                    activeSection === 'certifications' ? 'text-primary' : 'text-text-secondary'
-                  }`}
+                  className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'certifications' ? 'text-primary' : 'text-text-secondary'}`}
                   onClick={(e) => { e.preventDefault(); scrollToSection('certifications') }}
                 >
                   Certifications
@@ -144,9 +134,7 @@ export default function Navigation() {
               <li>
                 <a 
                   href="#testimonials" 
-                  className={`text-xs xl:text-sm font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${
-                    activeSection === 'testimonials' ? 'text-primary' : 'text-text-secondary'
-                  }`}
+                  className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'testimonials' ? 'text-primary' : 'text-text-secondary'}`}
                   onClick={(e) => { e.preventDefault(); scrollToSection('testimonials') }}
                 >
                   Testimonials
@@ -158,9 +146,7 @@ export default function Navigation() {
               <li>
                 <a 
                   href="#blogs" 
-                  className={`text-xs xl:text-sm font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${
-                    activeSection === 'blogs' ? 'text-primary' : 'text-text-secondary'
-                  }`}
+                  className={`text-xs sm:text-sm xl:text-base font-medium transition-colors duration-300 hover:text-primary relative whitespace-nowrap ${activeSection === 'blogs' ? 'text-primary' : 'text-text-secondary'}`}
                   onClick={(e) => { e.preventDefault(); scrollToSection('blogs') }}
                 >
                   Blogs
