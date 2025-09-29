@@ -47,28 +47,25 @@ export default function Hero() {
   }, [displayedText, currentTitleIndex, isTyping, titles])
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-12 bg-gradient-to-br from-dark via-dark-secondary to-dark relative overflow-hidden">
-      {/* Background particles */}
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center pt-12 pb-8 bg-gradient-to-br from-dark via-dark-secondary to-dark relative overflow-hidden">
       <div className="absolute inset-0 bg-particles"></div>
-      
       <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <div className="space-y-2">
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-medium leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
                 Hi, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Sahan Siriwardhana</span>
               </h1>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold min-h-[4.5rem] flex items-center">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold flex items-center">
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap leading-tight">{displayedText}</span>
-                <span className="inline-block w-1 h-[0.9em] bg-primary ml-2 animate-pulse"></span>
+                <span className="inline-block w-1 h-[1em] bg-primary ml-2 animate-pulse"></span>
               </h2>
-              <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl">
                 Passionate about Full Stack Development, Business Analysis, Networking, and Project Management.
                 Currently pursuing BSc. Hons. Information Technology at University of Moratuwa.
               </p>
             </div>
-            
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <a href="#projects" className="btn btn-primary">View My Work</a>
               <a 
                 href="/images/Sahan Siriwardhana.pdf" 
@@ -79,11 +76,10 @@ export default function Hero() {
                 View My CV
               </a>
             </div>
-            
-            <div className="flex space-x-6">
+            <div className="flex flex-wrap gap-4 sm:gap-6">
               <a 
                 href="https://github.com/sahanhansa" 
-                className="w-12 h-12 bg-dark-secondary rounded-full flex items-center justify-center text-2xl text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-20 transition-all duration-300" 
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-dark-secondary rounded-full flex items-center justify-center text-xl sm:text-2xl text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-20 transition-all duration-300" 
                 aria-label="GitHub" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -92,7 +88,7 @@ export default function Hero() {
               </a>
               <a 
                 href="https://www.linkedin.com/in/sahan-siriwardhana-977700288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
-                className="w-12 h-12 bg-dark-secondary rounded-full flex items-center justify-center text-2xl text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-20 transition-all duration-300" 
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-dark-secondary rounded-full flex items-center justify-center text-xl sm:text-2xl text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-20 transition-all duration-300" 
                 aria-label="LinkedIn" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -101,17 +97,16 @@ export default function Hero() {
               </a>
               <a 
                 href="mailto:sahanhansa.rcg@gmail.com" 
-                className="w-12 h-12 bg-dark-secondary rounded-full flex items-center justify-center text-2xl text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-20 transition-all duration-300" 
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-dark-secondary rounded-full flex items-center justify-center text-xl sm:text-2xl text-text-secondary hover:text-primary hover:bg-primary hover:bg-opacity-20 transition-all duration-300" 
                 aria-label="Email"
               >
                 📧
               </a>
             </div>
           </div>
-          
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary border-opacity-30 shadow-2xl hover:scale-105 transition-transform duration-300">
+              <div className="w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary border-opacity-30 shadow-2xl hover:scale-105 transition-transform duration-300">
                 <Image 
                   src="/images/profile-photo.jpg" 
                   alt="Sahan Siriwardhana" 
@@ -121,7 +116,6 @@ export default function Hero() {
                   priority
                 />
               </div>
-              {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full opacity-80 animate-pulse"></div>
               <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-accent rounded-full opacity-60 animate-pulse"></div>
             </div>

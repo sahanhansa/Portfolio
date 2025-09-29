@@ -2,10 +2,10 @@ import Image from 'next/image'
 
 export default function Education() {
   return (
-    <section id="education" className="py-16 bg-gray-900">
+    <section id="education" className="py-10 sm:py-16 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">Education</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8">Education</h2>
           <p className="text-lg text-gray-300">My academic journey and continuous learning</p>
         </div>
         

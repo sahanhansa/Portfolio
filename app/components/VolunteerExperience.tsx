@@ -100,91 +100,91 @@ export default function VolunteerExperience() {
     }
   }
 
-  return (
-    <section id="volunteering" className="py-16 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">Volunteer Experience</h2>
-          <p className="text-lg text-gray-300">Making a difference in communities</p>
-        </div>
+
+    return (
+      <section id="volunteering" className="py-10 sm:py-16 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="text-center mb-6 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-4">Volunteer Experience</h2>
+            <p className="text-lg text-gray-300">Making a difference in communities</p>
+          </div>
         
-        <div className="relative max-w-6xl mx-auto">
-          <div className="flex items-center gap-6 mb-8">
-            <button 
-              className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl hover:bg-blue-700 transition-all duration-300 flex-shrink-0"
-              onClick={prevSlide}
-            >
-              &#8249;
-            </button>
+          <div className="relative max-w-6xl mx-auto">
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <button 
+                className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl hover:bg-blue-700 transition-all duration-300 flex-shrink-0"
+                onClick={prevSlide}
+              >
+                &#8249;
+              </button>
             
-            <div className={`flex-1 ${getGridClass(currentExperiences.length)}`}>
-              {currentExperiences.map((experience) => (
-                <div key={experience.id} className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-750 transition-colors w-full">
-                  <div className="h-40 overflow-hidden rounded-lg mb-4">
-                    <img 
-                      src={experience.image} 
-                      alt={experience.title}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                    />
-                  </div>
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="text-xl font-semibold text-blue-400 mb-2">{experience.title}</h3>
-                      <div className="space-y-1">
-                        <span className="block text-sm text-gray-300 font-medium">{experience.organization}</span>
-                        <span className="block text-xs text-blue-300 font-medium">{experience.period}</span>
-                      </div>
+              <div className={`flex-1 ${getGridClass(currentExperiences.length)}`}>
+                {currentExperiences.map((experience) => (
+                  <div key={experience.id} className="bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6 hover:bg-gray-750 transition-colors w-full">
+                    <div className="h-32 sm:h-40 overflow-hidden rounded-lg mb-4">
+                      <img 
+                        src={experience.image} 
+                        alt={experience.title}
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      />
                     </div>
-                    
                     <div className="space-y-4">
                       <div>
-                        <h4 className="text-sm font-semibold text-blue-400 mb-2">Leadership Role</h4>
-                        <p className="text-sm text-gray-300 leading-relaxed">{experience.description}</p>
+                        <h3 className="text-lg sm:text-xl font-semibold text-blue-400 mb-2">{experience.title}</h3>
+                        <div className="space-y-1">
+                          <span className="block text-sm text-gray-300 font-medium">{experience.organization}</span>
+                          <span className="block text-xs text-blue-300 font-medium">{experience.period}</span>
+                        </div>
                       </div>
+                    
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="text-sm font-semibold text-blue-400 mb-2">Leadership Role</h4>
+                          <p className="text-sm text-gray-300 leading-relaxed">{experience.description}</p>
+                        </div>
                       
-                      <div>
-                        <h4 className="text-sm font-semibold text-blue-400 mb-2">Key Activities</h4>
-                        <ul className="space-y-1">
-                          {experience.impact.map((item, index) => (
-                            <li key={index} className="text-sm text-gray-300">• {item}</li>
+                        <div>
+                          <h4 className="text-sm font-semibold text-blue-400 mb-2">Key Activities</h4>
+                          <ul className="space-y-1">
+                            {experience.impact.map((item, index) => (
+                              <li key={index} className="text-sm text-gray-300">• {item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {experience.tags.map((tag, index) => (
+                            <span key={index} className="px-3 py-1 bg-blue-600 bg-opacity-20 text-blue-300 text-xs rounded-full font-medium">
+                              {tag}
+                            </span>
                           ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2">
-                        {experience.tags.map((tag, index) => (
-                          <span key={index} className="px-3 py-1 bg-blue-600 bg-opacity-20 text-blue-300 text-xs rounded-full font-medium">
-                            {tag}
-                          </span>
-                        ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                ))}
+              </div>
+            
+              <button 
+                className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl hover:bg-blue-700 transition-all duration-300 flex-shrink-0"
+                onClick={nextSlide}
+              >
+                &#8250;
+              </button>
+            </div>
+          
+            <div className="flex justify-center space-x-2">
+              {Array.from({ length: totalSlides }, (_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide ? 'bg-blue-600' : 'bg-gray-600 hover:bg-gray-500'
+                  }`}
+                  onClick={() => goToSlide(index)}
+                />
               ))}
             </div>
-            
-            <button 
-              className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl hover:bg-blue-700 transition-all duration-300 flex-shrink-0"
-              onClick={nextSlide}
-            >
-              &#8250;
-            </button>
-          </div>
-          
-          <div className="flex justify-center space-x-2">
-            {Array.from({ length: totalSlides }, (_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-blue-600' : 'bg-gray-600 hover:bg-gray-500'
-                }`}
-                onClick={() => goToSlide(index)}
-              />
-            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   )
 }

@@ -15,8 +15,7 @@ export default function Contact() {
             <div className="text-center">
               
               <p className="text-gray-400 mb-8">
-                I'm always interested in hearing about new opportunities and exciting projects. 
-                Whether you have a question or just want to say hi, feel free to reach out!
+                I'm always interested in hearing about new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!
               </p>
             </div>
 
