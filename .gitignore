@@ -79,34 +79,21 @@ jspm_packages/
 .parcel-cache
 
 # Next.js build output
-.next
-out
+.next/
+.next/**
 
-# Nuxt.js build / generate output
-.nuxt
-dist
+# Vercel / output
+.out/
+.vercel/
 
-# Gatsby files
-.cache/
-public
-
-# Vuepress build output
-.vuepress/dist
-
-# Serverless directories
-.serverless/
-
-# FuseBox cache
-.fusebox/
-
-# DynamoDB Local files
-.dynamodb/
-
-# TernJS port file
-.tern-port
-
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
+# Node / IDE etc.
+node_modules/
+dist/
+npm-debug.log*
+yarn-error.log*
+.env*
+.vscode/
+.idea/
 
 # Temporary folders
 tmp/
@@ -131,12 +118,3 @@ Thumbs.db
 # Logs
 logs
 *.log
-
-# Vercel deployment
-.vercel
-
-# TypeScript
-*.tsbuildinfo
-
-# Local development
-.env.local
